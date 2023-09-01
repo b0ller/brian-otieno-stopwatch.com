@@ -8,6 +8,7 @@ const stopWatch = document.getElementById('stop-watch-container')
 let seconds = 0
 let minutes = 0
 let hours = 0
+let timeIsMoving = false
 
 let timeInterval = setInterval(setStopWatch, 1000)
 
@@ -28,13 +29,14 @@ themeBtn.addEventListener('click', (e) => {
 startBtn.addEventListener('click', () => setStopWatch())
 
 pauseBtn.addEventListener('click', () => {
-    if(startBtn.innerText === 'START'){
+    if(startBtn.innerText === 'START' && timeIsMoving){
         startBtn.innerText = 'RESUME'
-    } else if(startBtn.innerText === 'RESUME'){
+    } else if(startBtn.innerText === 'RESUME' && !timeIsMoving){
         startBtn.innerText = 'START'
     }
 
     clearInterval(timeInterval)
+    timeIsMoving = false
 })
     
 resetBtn.addEventListener('click', () => resetStopWatch())
@@ -79,6 +81,7 @@ function setStopWatch (){
         minutes=0
     }
     stopWatch.innerHTML = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`
+    timeIsMoving = true
 }
 
 function resetStopWatch(){
@@ -87,4 +90,5 @@ function resetStopWatch(){
     minutes = 0
     hours = 0
     stopWatch.innerHTML = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`
+    timeIsMoving = false
 }
