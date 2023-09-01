@@ -72,7 +72,7 @@ body {
   position: relative;
   font-family: inherit;
   text-transform: uppercase;
-  background-color: rgb(155, 84, 2);
+  background-color: rgb(56,56,56);
   color: var(--secondary-color);
   border: none;
   overflow: hidden;
