@@ -27,7 +27,15 @@ themeBtn.addEventListener('click', (e) => {
 
 startBtn.addEventListener('click', () => setStopWatch())
 
-pauseBtn.addEventListener('click', () => clearInterval(timeInterval))
+pauseBtn.addEventListener('click', () => {
+    if(startBtn.innerText === 'START'){
+        startBtn.innerText = 'RESUME'
+    } else if(startBtn.innerText === 'RESUME'){
+        startBtn.innerText = 'START'
+    }
+
+    clearInterval(timeInterval)
+})
     
 resetBtn.addEventListener('click', () => resetStopWatch())
 
