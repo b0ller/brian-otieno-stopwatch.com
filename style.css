@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Heeb0:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Caprasimo&display=swap');
 
 :root {
   --primary-color: #000;
@@ -24,7 +24,7 @@ html.dark {
 }
 
 body {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Caprasimo', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
